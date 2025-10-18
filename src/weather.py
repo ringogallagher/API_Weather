@@ -1,24 +1,22 @@
 import requests
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
 CITY = input("Введите название города: ")
-
-
+API_KEY = "e0926730d3144f10a49132901252409"
+#URL = f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={CITY}&lang=ru"
+URL = f"http://api.weatherapi.com/v1/current.json"
 
 icons = {
 }
 params = {
     "q": CITY,
-    "key": os.getenv("API_KEY"),
+    "key": API_KEY,
     "lang": "en"
 }
 
-response = requests.get(os.getenv("URL"),params = params)
-data = response.json()
+responce = requests.get(URL,params = params)
+data = responce.json()
 
-if response.status_code == 200 and "current" in data :
+if responce.status_code == 200 and "current" in data :
     weather_text = data["current"]["condition"]["text"]
     temp = data["current"]["temp_c"]
     icon = icons.get(weather_text, "🌍")
