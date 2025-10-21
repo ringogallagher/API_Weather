@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="language-select">
+    <select id="langSelect">
+      <option value="en">English</option>
+      <option value="ru">Русский</option>
+      <option value="hu">Magyar</option>
+    </select>
+  </div>
+
+  <div class="weather-container">
+    <div class="main-weather" id="mainWeather">
+      <div class="loader">Loading your weather...</div>
+    </div>
+    <h2 id="forecastTitle" class="forecast-title"></h2>
+    <div class="forecast-container" id="forecast"></div>
+  </div>
+
+  <div id="animationContainer" class="weather-animation"></div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
