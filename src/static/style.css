@@ -141,5 +141,3 @@ h1.city-name {
   from { transform: translateY(-10px); opacity: 0.8; }
   to { transform: translateY(100vh); opacity: 0; }
 }
-
-

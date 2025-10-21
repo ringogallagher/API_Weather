@@ -93,5 +93,3 @@ document.getElementById("langSelect").addEventListener("change", (e) => {
 });
 
 window.addEventListener("load", () => fetchWeather("en"));
-
-
