@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #001f3f, #000814 90%);
+  color: #e6f0ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.language-select {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.language-select select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #002a5e;
+  color: #fff;
+  border: 1px solid #335a8d;
+}
+
+.weather-container {
+  margin-top: 60px;
+  text-align: center;
+  width: 90%;
+  max-width: 650px;
+}
+
+.main-weather {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px 40px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+h1.city-name {
+  font-size: 2.4em;
+  color: #76a9ff;
+  margin-bottom: 5px;
+}
+
+.temp {
+  font-size: 3.8em;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.condition {
+  font-size: 1.3em;
+  color: #a8cfff;
+  margin-bottom: 20px;
+}
+
+.details {
+  font-size: 0.95em;
+  color: #d0e3ff;
+  line-height: 1.7;
+}
+
+.forecast-title {
+  font-size: 1.4em;
+  color: #7db2ff;
+  margin-bottom: 10px;
+}
+
+.forecast-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.forecast-day {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 15px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.forecast-day:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+.forecast-day p {
+  margin: 6px 0;
+  color: #e0ecff;
+}
+
+.loader {
+  color: #ccc;
+}
+
+/* weather animations */
+.weather-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.sun {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #ffd700, #ffb700);
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px rgba(255, 215, 0, 0.5);
+  animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.9; }
+  to { transform: scale(1.1); opacity: 1; }
+}
+
+.rain-drop {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background: #66aaff;
+  animation: rain 0.8s linear infinite;
+}
+
+@keyframes rain {
+  from { transform: translateY(-10px); opacity: 0.8; }
+  to { transform: translateY(100vh); opacity: 0; }
+}
