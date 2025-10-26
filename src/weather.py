@@ -2,17 +2,15 @@ from flask import Flask, render_template, request, jsonify
 import requests
 import datetime
 import locale
+from config import Config
 
 app = Flask(__name__)
 
-API_KEY = "e0926730d3144f10a49132901252409"
-BASE_URL = "http://api.weatherapi.com/v1/forecast.json"
-
-LANG_MAP = {
-    "en": "en",
-    "ru": "ru",
-    "hu": "hu"
-}
+# Load configuration
+API_KEY = Config.WEATHER_API_KEY
+BASE_URL = Config.WEATHER_API_BASE_URL
+LANG_MAP = Config.LANG_MAP
+REQUEST_TIMEOUT = Config.REQUEST_TIMEOUT
 
 def format_date(date_str, lang):
     date_obj = datetime.datetime.strptime(date_str, "%Y-%m-%d")
@@ -47,7 +45,7 @@ def weather():
         }
 
         try:
-            response = requests.get(BASE_URL, params=params, timeout=10)
+            response = requests.get(BASE_URL, params=params, timeout=REQUEST_TIMEOUT)
             response.raise_for_status()  # Raises HTTPError for bad responses
         except requests.exceptions.Timeout:
             return jsonify({"error": "Request timeout: Weather service is not responding"}), 504

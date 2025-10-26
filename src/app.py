@@ -1,15 +1,17 @@
 from flask import Flask, jsonify
 import requests
+from config import Config
 
 app = Flask(__name__)
 
-API_KEY = "71b3b4ac915b12fa8731a2995a4c75d4"
+# Load API key from environment
+API_KEY = Config.OPENWEATHER_API_KEY
 
 @app.route("/weather/<city>")
 def get_weather(city):
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric&lang=ru"
+    url = f"{Config.OPENWEATHER_API_BASE_URL}?q={city}&appid={API_KEY}&units=metric&lang=ru"
     r = requests.get(url).json()
     return jsonify(r)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=Config.DEBUG)
