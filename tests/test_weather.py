@@ -1,7 +1,17 @@
 import pytest
 from unittest.mock import patch, MagicMock
 import json
-from src.weather import app
+import os
+import sys
+
+# Add src directory to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+
+# Set test environment variables BEFORE importing modules
+os.environ.setdefault('WEATHER_API_KEY', 'test_api_key')
+os.environ.setdefault('OPENWEATHER_API_KEY', 'test_openweather_key')
+
+from weather import app
 
 
 @pytest.fixture

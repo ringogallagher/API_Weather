@@ -37,7 +37,17 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Run the application:
+4. Configure environment variables:
+```bash
+# Copy the example environment file
+cp .env.example .env
+
+# Edit .env and add your API keys
+# - Get WeatherAPI key from: https://www.weatherapi.com/
+# - Get OpenWeatherMap key from: https://openweathermap.org/
+```
+
+5. Run the application:
 ```bash
 cd src
 python weather.py
@@ -136,6 +146,15 @@ Returns weather data for the user's location.
 - **Weather API**: WeatherAPI.com
 - **Testing**: pytest, pytest-cov
 - **Styling**: CSS3 with animations and gradients
+
+## 🔐 Security
+
+The application follows security best practices:
+
+- ✅ **Environment Variables**: API keys stored in `.env` file (never committed)
+- ✅ **Git Ignore**: `.env` is excluded from version control
+- ✅ **Example File**: `.env.example` provides template for new users
+- ✅ **Config Module**: Centralized configuration management
 
 ## 🐛 Error Handling
 
