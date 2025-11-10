@@ -12,18 +12,6 @@ A modern weather forecast web application built with Flask, featuring multi-lang
 - **Error Handling**: Comprehensive error handling for robust user experience
 - **RESTful API**: Clean API endpoints for weather data
 
-## ⚠️ Limitations
-
-While the application provides a robust experience, it has certain limitations:
-
-- ⚡ **Dependency on external APIs** — relies on WeatherAPI and OpenWeatherMap; data may be unavailable if these services experience downtime or rate limits.  
-- 🌍 **IP-based location detection** — location accuracy may vary depending on the user’s network provider or VPN.  
-- 📱 **Mobile optimization** — designed to be responsive, but minor visual inconsistencies may occur on some mobile devices.  
-- 🕒 **Forecast update intervals** — data is refreshed upon user requests and not continuously updated in real-time.  
-- 🌐 **Language support** — currently supports only English, Russian, and Hungarian; additional languages are not yet available.  
-- 🔒 **No user accounts** — the app does not store user data or include authentication features.  
-- 🧪 **Educational project** — developed for learning purposes and not intended for production or high-load environments.
-
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -167,6 +155,18 @@ The application follows security best practices:
 - ✅ **Git Ignore**: `.env` is excluded from version control
 - ✅ **Example File**: `.env.example` provides template for new users
 - ✅ **Config Module**: Centralized configuration management
+
+## ⚠️ Limitations
+
+While the application provides a robust experience, it has certain limitations:
+
+- ⚡ **Dependency on external APIs** — relies on WeatherAPI and OpenWeatherMap; data may be unavailable if these services experience downtime or rate limits.  
+- 🌍 **IP-based location detection** — location accuracy may vary depending on the user’s network provider or VPN.  
+- 📱 **Mobile optimization** — designed to be responsive, but minor visual inconsistencies may occur on some mobile devices.  
+- 🕒 **Forecast update intervals** — data is refreshed upon user requests and not continuously updated in real-time.  
+- 🌐 **Language support** — currently supports only English, Russian, and Hungarian; additional languages are not yet available.  
+- 🔒 **No user accounts** — the app does not store user data or include authentication features.  
+- 🧪 **Educational project** — developed for learning purposes and not intended for production or high-load environments.
 
 ## 🐛 Error Handling
 
