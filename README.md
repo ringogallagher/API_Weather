@@ -211,4 +211,3 @@ For questions or issues, please open an issue in the repository.
 
 ---
 
-**Last Updated**: January 2024
